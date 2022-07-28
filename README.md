@@ -1,4 +1,4 @@
-# Nuxt 3 Minimal Starter
+# Nuxt3Demo-餐廳排行
 
 Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 
