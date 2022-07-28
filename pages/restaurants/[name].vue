@@ -32,12 +32,21 @@
   </div>
 </template>
 <script setup lang="ts">
+import { RestaurantData } from '@/types/gloable'
 import restaurants from "@/data.json";
 const route = useRoute();
 const restaurantName = route.params.name;
-const restaurant = restaurants.find(
+const restaurant:RestaurantData= restaurants.find(
   (restaurant) => restaurant.name === restaurantName
 );
+useHead({
+  title:restaurant ? restaurantName as string : '404 Not Found of This Resturant!',
+  viewport:'width=device-width, initial-scale=1, maximum-scale=1',
+  charset:'utf-8',
+  meta:[
+    {name:'description',content: `Top 50 Restaurant of the world-${restaurantName}`}
+  ],
+})
 </script>
 <style scoped>
 .restaurant-container {
